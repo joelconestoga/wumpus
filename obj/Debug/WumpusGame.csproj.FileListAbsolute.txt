@@ -4,3 +4,9 @@ C:\Development\CSharp\8145-sdt\Wumpus\bin\Debug\Wumpus.pdb
 C:\Development\CSharp\8145-sdt\Wumpus\obj\Debug\Wumpus.exe
 C:\Development\CSharp\8145-sdt\Wumpus\obj\Debug\Wumpus.pdb
 C:\Development\CSharp\8145-sdt\Wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
+C:\Development\git\c#\wumpus\bin\Debug\Wumpus.exe.config
+C:\Development\git\c#\wumpus\obj\Debug\Wumpus.exe
+C:\Development\git\c#\wumpus\obj\Debug\Wumpus.pdb
+C:\Development\git\c#\wumpus\bin\Debug\Wumpus.exe
+C:\Development\git\c#\wumpus\bin\Debug\Wumpus.pdb
+C:\Development\git\c#\wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
