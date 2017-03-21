@@ -1,0 +1,6 @@
+C:\Development\CSharp\8145-sdt\Wumpus\bin\Debug\Wumpus.exe.config
+C:\Development\CSharp\8145-sdt\Wumpus\bin\Debug\Wumpus.exe
+C:\Development\CSharp\8145-sdt\Wumpus\bin\Debug\Wumpus.pdb
+C:\Development\CSharp\8145-sdt\Wumpus\obj\Debug\Wumpus.exe
+C:\Development\CSharp\8145-sdt\Wumpus\obj\Debug\Wumpus.pdb
+C:\Development\CSharp\8145-sdt\Wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
