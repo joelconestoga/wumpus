@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,8 @@ namespace WumpusGame
 {
     public class Program
     {
+        private static Room[] Rooms = null;
+
         public static void Main(string[] args)
         {
             Room entrance = readFile();
@@ -15,46 +18,94 @@ namespace WumpusGame
 
             Game game = new Game(entrance, warrior);
 
+            Console.ReadKey();
+
             game.start();
 
         }
 
         private static Room readFile()
         {
-            Room room1 = new Room(1, "Beware of the Wumpus!");
+            TextReader tr = new StreamReader("/Data(2).txt");
 
-            Room room2 = new Room(2, "There is a black pool of water in the corner.");
-            Room room3 = new Room(3, "You see a Tyrannosaurus Rex fossil embedded in the wall.");
-            Room room4 = new Room(4, "There is an empty Diet Rite can here.");
-            Room room5 = new Room(5, "You almost step on a broken cellular phone.");
-            Room room6 = new Room(6, "A couple of evil rats stare at you from under a pile of rocks.");
-            Room room7 = new Room(7, "You find a Spanish doubloon on the floor.");
-            Room room8 = new Room(8, "The ceiling is very low and you have to stoop.");
-            Room room9 = new Room(9, "You step on a slippery spot, slip, and fall on your keester.");
-            Room room10 = new Room(10, "You get a strong sense of deja vu.");
+            // Read number of Rooms.
+            string rooms = tr.ReadLine();
+            string[] roomsSplit = rooms.Split(',');
 
-            room1.FrontRoom = room2; room1.LeftRoom = room6; room1.RightRoom = room10;
-            room2.FrontRoom = room1; room2.LeftRoom = room3; room2.RightRoom = room7;
+            int totalNumberOfRooms = int.Parse(roomsSplit[0]);
+            int totalSpiderRooms = int.Parse(roomsSplit[1]);
+            int totalPitRooms = int.Parse(roomsSplit[2]);
 
-            room3.FrontRoom = room2; room3.LeftRoom = room4; room3.RightRoom = room8;
-            room3.Trap = new Pit();
+            Rooms = new Room[totalNumberOfRooms];
 
-            room4.FrontRoom = room3; room4.LeftRoom = room5; room4.RightRoom = room9;
-            room5.FrontRoom = room4; room5.LeftRoom = room6; room5.RightRoom = room10;
+            for (int i = 0; i < totalNumberOfRooms; i++)
+            {
+                string roomData = tr.ReadLine();
+                Console.WriteLine(roomData);
+                string[] roomDataSplit = roomData.Split(',');
+                Console.WriteLine(roomDataSplit[0]);
+                int thisRoom = int.Parse(roomDataSplit[0]);
+                string sign = roomDataSplit[1];
+                Room room = new Room(thisRoom, sign);
+                Rooms[(thisRoom - 1)] = room;
+                Console.WriteLine(room.Number);
+            }
 
-            room6.FrontRoom = room1; room6.LeftRoom = room5; room6.RightRoom = room7;
-            room6.Trap = new Spider();
+            for (int i = 0; i < totalNumberOfRooms; i++)
+            {
+                string roomTunnels = tr.ReadLine();
+                Console.WriteLine(roomTunnels);
+                string[] roomTunnelsSplit = roomTunnels.Split(',');
+                Rooms[i].LeftRoom = Rooms[(int.Parse(roomTunnelsSplit[1]) - 1)];
+                Rooms[i].FrontRoom = Rooms[(int.Parse(roomTunnelsSplit[2]) - 1)];
+                Rooms[i].RightRoom = Rooms[(int.Parse(roomTunnelsSplit[3]) - 1)];
+            }
 
-            room7.FrontRoom = room2; room7.LeftRoom = room6; room7.RightRoom = room8;
-            room7.Trap = new Wumpus();
+            SetupTraps(totalSpiderRooms, totalPitRooms);
 
-            room8.FrontRoom = room3; room8.LeftRoom = room7; room8.RightRoom = room9;
+            // Close the stream.
+            tr.Close();
+            return Rooms[0];
 
-            room9.FrontRoom = room4; room9.LeftRoom = room8; room9.RightRoom = room10;
-            room10.FrontRoom = room1; room10.LeftRoom = room5; room10.RightRoom = room9;
-            room10.Trap = new Spider();
+        }
 
-            return room1;
+        private static void SetupTraps(int totalSpiderRooms, int totalPitRooms)
+        {
+            HashSet<int> randomNumbers = new HashSet<int>();
+            int randomRoomIndex = 0;
+
+            for(int i = 0; i < totalSpiderRooms; i++)
+            {
+                randomRoomIndex = GenerateRandomNumber(1, (Rooms.Length - 1), randomNumbers);
+                Rooms[randomRoomIndex].Trap = new Spider();
+                Console.WriteLine("Placed Spider in Room " + (randomRoomIndex + 1));
+            }
+
+            for (int i = 0; i < totalPitRooms; i++)
+            {
+                randomRoomIndex = GenerateRandomNumber(1, (Rooms.Length - 1), randomNumbers);
+                Rooms[randomRoomIndex].Trap = new Pit();
+                Console.WriteLine("Placed Pit in Room " + (randomRoomIndex + 1));
+            }
+
+            randomRoomIndex = GenerateRandomNumber(1, (Rooms.Length - 1), randomNumbers);
+            Rooms[randomRoomIndex].Trap = new Wumpus();
+            Console.WriteLine("Placed Wumpus in Room " + (randomRoomIndex + 1));
+
+        }
+
+        private static int GenerateRandomNumber(int start, int end, HashSet<int> randomNumbers)
+        {
+            Random rng = new Random();
+            int number = 0;
+            do
+            {
+                number = rng.Next(1, (Rooms.Length - 1));
+            }
+            while (randomNumbers.Contains(number));
+            randomNumbers.Add(number);
+            return number;
+
         }
     }
 }
