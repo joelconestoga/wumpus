@@ -56,8 +56,8 @@ namespace WumpusGame
                 string roomTunnels = tr.ReadLine();
                 Console.WriteLine(roomTunnels);
                 string[] roomTunnelsSplit = roomTunnels.Split(',');
-                Rooms[i].LeftRoom = Rooms[(int.Parse(roomTunnelsSplit[1]) - 1)];
-                Rooms[i].FrontRoom = Rooms[(int.Parse(roomTunnelsSplit[2]) - 1)];
+                Rooms[i].FrontRoom = Rooms[(int.Parse(roomTunnelsSplit[1]) - 1)];
+                Rooms[i].LeftRoom = Rooms[(int.Parse(roomTunnelsSplit[2]) - 1)];
                 Rooms[i].RightRoom = Rooms[(int.Parse(roomTunnelsSplit[3]) - 1)];
             }
 
