@@ -41,12 +41,12 @@ namespace WumpusGame
             presentTrap(CurrentRoom);
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine(@"     Room {0}                     Room {1}         Room {2}         Room {3}", CurrentRoom, CurrentRoom.FrontRoom, CurrentRoom.LeftRoom, CurrentRoom.RightRoom);
-            Console.WriteLine(@"     ______            ?        ______         ______         ______");
-            Console.WriteLine(@"    / you  \          O        /      \       /      \       /      \     ---\__O");
-            Console.WriteLine(@"    | are  |        /|\        |     o|       |     o|       |     o|           |\    ({0} Arrows Left)", Warrior.Arrows);
-            Console.WriteLine(@"   _| here |__      / \      __|      |__   __|      |__   __|      |__        / \ ");
-            Console.WriteLine(@"                  [M]ove                                                     [S]hoot ");
+            Console.WriteLine(@"     Room {0}           Room {1}       Room {2}      Room {3}", CurrentRoom, CurrentRoom.FrontRoom, CurrentRoom.LeftRoom, CurrentRoom.RightRoom);
+            Console.WriteLine(@"     _____        ?     ____        ____        ____");
+            Console.WriteLine(@"    / you \      O     /    \      /    \      /    \  ---\__O");
+            Console.WriteLine(@"    | are |    /|\     |   o|      |   o|      |   o|        |\ ({0} Arrows Left)", Warrior.Arrows);
+            Console.WriteLine(@"   _| here|__  / \   __|    |__  __|    |__  __|    |__     / \ ");
+            Console.WriteLine(@"              [M]ove                                      [S]hoot ");
             Console.WriteLine();
 
             Console.Write("   Move or Shoot? ");

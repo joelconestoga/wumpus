@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Results\BatRoom.cs" />
     <Compile Include="Results\Result.cs" />
     <Compile Include="Main\Game.cs" />
     <Compile Include="Results\GameOver.cs" />

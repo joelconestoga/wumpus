@@ -16,12 +16,13 @@ namespace WumpusGame
 
         public new Result getIn()
         {
-            int[] randoms = new int[5];
             Room room = this;
 
-            for (int i = 0; i < randoms.Length - 1; i++)
+            Random random = new Random();
+
+            for (int i = 0; i < 4; i++)
             {
-                switch (randoms[i])
+                switch (random.Next(1, 3))
                 {
                     case 1:
                         room = room.FrontRoom;

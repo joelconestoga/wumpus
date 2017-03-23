@@ -16,3 +16,9 @@ C:\Users\shubh\Documents\GitHub\wumpus\obj\Debug\Wumpus.pdb
 C:\Users\shubh\Documents\GitHub\wumpus\bin\Debug\Wumpus.exe
 C:\Users\shubh\Documents\GitHub\wumpus\bin\Debug\Wumpus.pdb
 C:\Users\shubh\Documents\GitHub\wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
+\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\bin\Debug\Wumpus.exe.config
+\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\obj\Debug\Wumpus.exe
+\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\obj\Debug\Wumpus.pdb
+\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\bin\Debug\Wumpus.exe
+\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\bin\Debug\Wumpus.pdb
+\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
