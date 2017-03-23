@@ -1,6 +1,0 @@
-\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\bin\Release\Wumpus.exe.config
-\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\bin\Release\Wumpus.exe
-\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\bin\Release\Wumpus.pdb
-\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\obj\Release\WumpusGame.csprojResolveAssemblyReference.cache
-\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\obj\Release\Wumpus.exe
-\\FS06D\Stu9\Home\Jkoppenmatsu1831\8145-SDT\git\wumpus\obj\Release\Wumpus.pdb
