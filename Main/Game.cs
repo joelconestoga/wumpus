@@ -62,7 +62,7 @@ namespace WumpusGame
                     case "S":
                         return Shoot;
                     default:
-                        showInvalidEntry("   Invalid option!", "Move or Shoot? ");
+                        showInvalidEntry("   Invalid option!", "[M]ove or [S]hoot? ");
                         break;
                 }
 

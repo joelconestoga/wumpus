@@ -10,3 +10,9 @@ C:\Development\git\c#\wumpus\obj\Debug\Wumpus.pdb
 C:\Development\git\c#\wumpus\bin\Debug\Wumpus.exe
 C:\Development\git\c#\wumpus\bin\Debug\Wumpus.pdb
 C:\Development\git\c#\wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
+C:\Users\shubh\Documents\GitHub\wumpus\bin\Debug\Wumpus.exe.config
+C:\Users\shubh\Documents\GitHub\wumpus\obj\Debug\Wumpus.exe
+C:\Users\shubh\Documents\GitHub\wumpus\obj\Debug\Wumpus.pdb
+C:\Users\shubh\Documents\GitHub\wumpus\bin\Debug\Wumpus.exe
+C:\Users\shubh\Documents\GitHub\wumpus\bin\Debug\Wumpus.pdb
+C:\Users\shubh\Documents\GitHub\wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
