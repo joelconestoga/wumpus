@@ -89,8 +89,12 @@ namespace WumpusGame
 
         private Result moveTo(Room target)
         {
-            CurrentRoom = target;
-            return target.getIn();
+            Result result = target.getIn();
+
+            if (result is Room)
+                CurrentRoom = (Room)result;
+
+            return result;
         }
 
         private Room readWhereToMoveOrShoot(Play play)
