@@ -16,3 +16,10 @@ C:\Users\shubh\Documents\GitHub\wumpus\obj\Debug\Wumpus.pdb
 C:\Users\shubh\Documents\GitHub\wumpus\bin\Debug\Wumpus.exe
 C:\Users\shubh\Documents\GitHub\wumpus\bin\Debug\Wumpus.pdb
 C:\Users\shubh\Documents\GitHub\wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
+G:\8145-SD\git\wumpus\bin\Debug\Wumpus.exe.config
+G:\8145-SD\git\wumpus\bin\Debug\Wumpus.exe
+G:\8145-SD\git\wumpus\bin\Debug\Wumpus.pdb
+G:\8145-SD\git\wumpus\obj\Debug\WumpusGame.csprojResolveAssemblyReference.cache
+G:\8145-SD\git\wumpus\obj\Debug\Wumpus.exe
+G:\8145-SD\git\wumpus\obj\Debug\Wumpus.pdb
+G:\8145-SD\git\wumpus\bin\Debug\Data(2).txt

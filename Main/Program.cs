@@ -26,7 +26,7 @@ namespace WumpusGame
 
         private static Room readFile()
         {
-            TextReader tr = new StreamReader("/Data(2).txt");
+            TextReader tr = new StreamReader("Data(2).txt");
 
             // Read number of Rooms.
             string rooms = tr.ReadLine();
