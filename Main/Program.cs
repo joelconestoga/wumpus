@@ -26,15 +26,15 @@ namespace WumpusGame
 
         private static Room readFile()
         {
-            TextReader tr = new StreamReader("Data(2).txt");
+            TextReader tr = new StreamReader("EntryFile.csv");
 
             // Read number of Rooms.
             string rooms = tr.ReadLine();
-            string[] roomsSplit = rooms.Split(',');
+            string[] firstLine = rooms.Split(',');
 
-            int totalNumberOfRooms = int.Parse(roomsSplit[0]);
-            int totalSpiderRooms = int.Parse(roomsSplit[1]);
-            int totalPitRooms = int.Parse(roomsSplit[2]);
+            int totalNumberOfRooms = int.Parse(firstLine[0]);
+            int totalSpiderRooms = int.Parse(firstLine[1]);
+            int totalPitRooms = int.Parse(firstLine[2]);
 
             Rooms = new Room[totalNumberOfRooms];
 
