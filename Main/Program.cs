@@ -89,6 +89,10 @@ namespace WumpusGame
             }
 
             randomRoomIndex = GenerateRandomNumber(1, (Rooms.Length - 1), randomNumbers);
+            Rooms[randomRoomIndex].Supply = true;
+            Console.WriteLine("Placed Supply in Room" + (randomRoomIndex + 1));
+
+            randomRoomIndex = GenerateRandomNumber(1, (Rooms.Length - 1), randomNumbers);
             Rooms[randomRoomIndex].Trap = new Wumpus();
             Console.WriteLine("Placed Wumpus in Room " + (randomRoomIndex + 1));
 
