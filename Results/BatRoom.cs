@@ -14,7 +14,7 @@ namespace WumpusGame
             this.Sign = sign;
         }
 
-        public new Result getIn()
+        public new Result getIn(Warrior warrior)
         {
             Room room = this;
 
@@ -39,7 +39,7 @@ namespace WumpusGame
             }
 
             // Avoid looping between bat rooms
-            return room is BatRoom ? room.FrontRoom : room.getIn();
+            return room is BatRoom ? room.FrontRoom : room.getIn(null);
         }
     }
 }

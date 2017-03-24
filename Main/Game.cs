@@ -79,6 +79,11 @@ namespace WumpusGame
 
         private Result shootTo(Room target)
         {
+            if(Warrior.Arrows == 0)
+            {
+                return Warrior.spendArrow();
+            }
+
             Result result = target.getShot();
 
             if (result is Victory)
@@ -89,12 +94,16 @@ namespace WumpusGame
 
         private Result moveTo(Room target)
         {
+            /*
             Result result = target.getIn();
 
             if (result is Room)
                 CurrentRoom = (Room)result;
 
             return result;
+            */
+            CurrentRoom = target;
+            return target.getIn(Warrior);
         }
 
         private Room readWhereToMoveOrShoot(Play play)
