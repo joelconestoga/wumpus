@@ -36,9 +36,9 @@ namespace WumpusGame
         {
             if(this.Supply)
             {
-                Console.WriteLine("\n\nYou step into the Supply Room. You get more arrows! Yay!");
-                Console.WriteLine("(P.S The Supply is over now)");
-                Console.WriteLine("Press any key to continue...");
+                Console.WriteLine("\n\n You step into the Supply Room. You get more arrows! Yay!");
+                Console.WriteLine(" (P.S The Supply is over now)");
+                Console.WriteLine(" Press any key to continue...");
                 warrior.Arrows += 3;
                 this.Supply = false;
                 Room.hasSupply = false;

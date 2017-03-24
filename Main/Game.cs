@@ -41,15 +41,15 @@ namespace WumpusGame
             presentTrap(CurrentRoom);
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine(@"     Room {0}           Room {1}       Room {2}      Room {3}", CurrentRoom, CurrentRoom.FrontRoom, CurrentRoom.LeftRoom, CurrentRoom.RightRoom);
-            Console.WriteLine(@"     _____        ?     ____        ____        ____");
-            Console.WriteLine(@"    / you \      O     /    \      /    \      /    \  ---\__O");
-            Console.WriteLine(@"    | are |    /|\     |   o|      |   o|      |   o|        |\ ({0} Arrows Left)", Warrior.Arrows);
-            Console.WriteLine(@"   _| here|__  / \   __|    |__  __|    |__  __|    |__     / \ ");
-            Console.WriteLine(@"              [M]ove                                      [S]hoot ");
+            Console.WriteLine(@"   Room {0}           Room {1}       Room {2}      Room {3}", CurrentRoom, CurrentRoom.FrontRoom, CurrentRoom.LeftRoom, CurrentRoom.RightRoom);
+            Console.WriteLine(@"   _____        ?     ____        ____        ____");
+            Console.WriteLine(@"  / you \      O     /    \      /    \      /    \  ---\__O");
+            Console.WriteLine(@"  | are |    /|\     |   o|      |   o|      |   o|        |\ ({0} Arrows Left)", Warrior.Arrows);
+            Console.WriteLine(@" _| here|_   / \    _|    |_    _|    |_    _|    |_      / \ ");
+            Console.WriteLine(@"            [M]ove                                      [S]hoot ");
             Console.WriteLine();
 
-            Console.Write("   Move or Shoot? ");
+            Console.Write(" [M]ove or [S]hoot? ");
 
             do
             {
@@ -62,7 +62,7 @@ namespace WumpusGame
                     case "S":
                         return Shoot;
                     default:
-                        showInvalidEntry("   Invalid option!", "[M]ove or [S]hoot? ");
+                        showInvalidEntry(" Invalid option!", "[M]ove or [S]hoot? ");
                         break;
                 }
 
@@ -108,7 +108,7 @@ namespace WumpusGame
 
         private Room readWhereToMoveOrShoot(Play play)
         {
-            Console.Write("   Which room? ");
+            Console.Write(" Which room? ");
 
             do
             {
@@ -130,7 +130,7 @@ namespace WumpusGame
                 }
                 catch (Exception)
                 {
-                    showInvalidEntry(String.Format("   Dimwit! You can't get to there from here. There are tunnels to rooms {0}, {1}, and {2}.",
+                    showInvalidEntry(String.Format(" Dimwit! You can't get to there from here. There are tunnels to rooms {0}, {1}, and {2}.",
                         CurrentRoom.FrontRoom, CurrentRoom.LeftRoom, CurrentRoom.RightRoom), "Which room? ");
                 }
 
@@ -148,8 +148,8 @@ namespace WumpusGame
             Console.SetCursorPosition(0, Console.CursorTop - 2);
             Console.WriteLine(new String(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, Console.CursorTop - 3);
-            Console.WriteLine("   " + label + new String(' ', Console.WindowWidth - label.Length));
-            Console.SetCursorPosition(label.Length + 3, Console.CursorTop - 2);
+            Console.WriteLine(" " + label + new String(' ', Console.WindowWidth - label.Length));
+            Console.SetCursorPosition(label.Length + 1, Console.CursorTop - 2);
         }
 
         private void presentTrap(Room currentRoom)

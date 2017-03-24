@@ -6,7 +6,7 @@ namespace WumpusGame
     {
         public Result getShot()
         {
-            Console.WriteLine("   Your arrow goes down the tunnel and is lost. You missed.");
+            Console.WriteLine(" Your arrow goes down the tunnel and is lost. You missed.");
             Console.ReadKey();
             return null;
         }

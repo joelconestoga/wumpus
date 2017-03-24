@@ -6,7 +6,7 @@ namespace WumpusGame
     {
         public Victory()
         {
-            Console.WriteLine("   ** Y O U   W I N! **");
+            Console.WriteLine("\t** Y O U   W I N! **");
             Console.ReadKey();
         }
     }
