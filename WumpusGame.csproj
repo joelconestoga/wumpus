@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Traps\Bat.cs" />
     <Compile Include="Main\FileReader.cs" />
-    <Compile Include="Results\BatRoom.cs" />
     <Compile Include="Results\Result.cs" />
     <Compile Include="Main\Game.cs" />
     <Compile Include="Results\GameOver.cs" />
@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\Room.cs" />
     <Compile Include="Traps\Spider.cs" />
-    <Compile Include="Traps\Trap.cs" />
+    <Compile Include="Traps\ITrap.cs" />
     <Compile Include="Traps\TrapFree.cs" />
     <Compile Include="Results\Victory.cs" />
     <Compile Include="Main\Warrior.cs" />
@@ -64,6 +64,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EntryFile2.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="EntryFile.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

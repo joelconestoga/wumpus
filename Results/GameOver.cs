@@ -6,6 +6,8 @@ namespace WumpusGame
     {
         public GameOver()
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("\tG A M E   O V E R");
             Console.ReadKey();
         }

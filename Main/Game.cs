@@ -8,9 +8,11 @@ namespace WumpusGame
     {
         private Warrior Warrior;
         private Room CurrentRoom;
+        private Room Entrance;
 
         public Game(Room entrance, Warrior warrior)
         {
+            this.Entrance = entrance;
             this.CurrentRoom = entrance;
             this.Warrior = warrior;
         }
@@ -19,12 +21,37 @@ namespace WumpusGame
         {
             Result next = null;
 
-            while (!(next is GameOver) && !(next is Victory))
+            while (true)
             {
                 Console.Clear();
 
                 next = readChoiceFor(CurrentRoom);
+
+                if (next is GameOver || next is Victory)
+                {
+                    if (playAgain())
+                        refreshGameStatus();
+                    else
+                        break;
+                }
             }
+        }
+
+        private bool playAgain()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(" Play again? Press [N] to leave...");
+            String result = Console.ReadLine();
+
+            return result.ToUpper() != "N";
+        }
+
+        private void refreshGameStatus()
+        {
+            CurrentRoom = Entrance;
+            Warrior.Arrows = 3;
+            Room.hasSupply = true;
         }
 
         private Result readChoiceFor(Room currentRoom)
@@ -39,6 +66,7 @@ namespace WumpusGame
         private Play readMoveOrShoot()
         {
             presentTrap(CurrentRoom);
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine(@"   Room {0}           Room {1}       Room {2}      Room {3}", CurrentRoom, CurrentRoom.FrontRoom, CurrentRoom.LeftRoom, CurrentRoom.RightRoom);
@@ -79,31 +107,18 @@ namespace WumpusGame
 
         private Result shootTo(Room target)
         {
-            if(Warrior.Arrows == 0)
-            {
-                return Warrior.spendArrow();
-            }
-
-            Result result = target.getShot();
-
-            if (result is Victory)
-                return result;
-
-            return Warrior.spendArrow();
+            return target.getShot(Warrior);
         }
 
         private Result moveTo(Room target)
         {
-            /*
-            Result result = target.getIn();
+            
+            Result result = target.getIn(Warrior);
 
             if (result is Room)
                 CurrentRoom = (Room)result;
 
             return result;
-            */
-            CurrentRoom = target;
-            return target.getIn(Warrior);
         }
 
         private Room readWhereToMoveOrShoot(Play play)

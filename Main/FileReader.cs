@@ -7,6 +7,8 @@ namespace WumpusGame
 {
     class FileReader
     {
+        private const string ENTRY_FILE = "EntryFile2.csv";
+
         private string fileName;
         private TextReader file;
 
@@ -25,7 +27,7 @@ namespace WumpusGame
 
         public Room readFile()
         {
-            file = new StreamReader("EntryFile.csv");
+            file = new StreamReader(ENTRY_FILE);
 
             readTotalsOfRoomsAndTraps();
 
@@ -90,7 +92,7 @@ namespace WumpusGame
             Console.WriteLine("\n=== TRAPS ===");
 
             int randomRoomIndex = 0;
-
+            
             for (int i = 0; i < totalSpiderRooms; i++)
             {
                 randomRoomIndex = generateRandomNumber();
@@ -106,13 +108,16 @@ namespace WumpusGame
             }
 
             randomRoomIndex = generateRandomNumber();
-            allRooms[randomRoomIndex].Supply = true;
-            Console.WriteLine(" Placed Supply in Room" + (randomRoomIndex + 1));
-
-            randomRoomIndex = generateRandomNumber();
             allRooms[randomRoomIndex].Trap = new Wumpus();
             Console.WriteLine(" Placed Wumpus in Room " + (randomRoomIndex + 1));
 
+            randomRoomIndex = generateRandomNumber();
+            allRooms[randomRoomIndex].Supply = true;
+            Console.WriteLine(" Placed Supply in Room " + (randomRoomIndex + 1));
+            
+            randomRoomIndex = generateRandomNumber();
+            allRooms[randomRoomIndex].Trap = new Bat(allRooms[randomRoomIndex]);
+            Console.WriteLine(" Placed Bats in Room " + (randomRoomIndex + 1));
         }
 
         private int generateRandomNumber()

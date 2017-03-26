@@ -1,9 +1,9 @@
 ﻿namespace WumpusGame
 {
-    public interface Trap
+    public interface ITrap
     {
         Result getShot();
         void presentSign();
-        Result getIn();
+        Result getIn(Warrior warrior);
     }
 }

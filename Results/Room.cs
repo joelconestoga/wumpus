@@ -12,7 +12,7 @@ namespace WumpusGame
         public Room FrontRoom { get; internal set; }
         public Room LeftRoom { get; internal set; }
         public Room RightRoom { get; internal set; }
-        public Trap Trap { get; set; }
+        public ITrap Trap { get; set; }
 
         public Room(int number, string sign)
         {
@@ -27,17 +27,45 @@ namespace WumpusGame
             return Number.ToString();
         }
 
-        public Result getShot()
+        public Result getShot(Warrior warrior)
         {
-            return Trap.getShot();
+            if (warrior.isOutOfArrow())
+                return lookForSupply();
+
+            warrior.spendArrow();
+
+            Result result = Trap.getShot();
+
+            if (result is Victory)
+                return result;
+
+            return warrior.isOutOfArrow() ? lookForSupply() : this;
+        }
+
+        private Result lookForSupply()
+        {
+            if (hasSupply)
+            {
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine(" You don't have any Arrows left.");
+                Console.WriteLine(" Find the supply room to continue!");
+                Console.ReadKey();
+
+                return null;
+            }
+
+            return new GameOver();
         }
 
         public Result getIn(Warrior warrior)
         {
             if(this.Supply)
             {
-                Console.WriteLine("\n\n You step into the Supply Room. You get more arrows! Yay!");
-                Console.WriteLine(" (P.S The Supply is over now)");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine(" You step into the Supply Room. You get more arrows! Yay!");
+                Console.WriteLine(" (P.S. Extra Supply is over now)");
                 Console.WriteLine(" Press any key to continue...");
                 warrior.Arrows += 3;
                 this.Supply = false;
@@ -46,7 +74,7 @@ namespace WumpusGame
                 return this;
             }
 
-            Result result = Trap.getIn();
+            Result result = Trap.getIn(warrior);
             return result == null ? this : result;
         }
     }
